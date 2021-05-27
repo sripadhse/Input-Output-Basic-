@@ -1,0 +1,27 @@
+fun main() {
+    val n = readLine()!!.toInt()
+    val input = readLine()!!.toCharArray()
+    var ifPossible = false
+ 
+    if (input.contains('.')) {
+        for (i in input.indices) {
+            if (input[i] == '.') {
+                input[i] = 'B'
+                ifPossible = true
+            }
+            if (i != input.size - 1) {
+                if (input[i] == 'H' && input[i + 1] == 'H') {
+                    ifPossible = false
+                    break
+                }
+            }
+        }
+    } else if (n == 1 && input[0] == 'H')
+        ifPossible = true
+ 
+    if (ifPossible) {
+        println("YES")
+        println(input)
+    } else
+        println("NO")
+}

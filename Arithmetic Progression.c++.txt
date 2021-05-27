@@ -1,0 +1,56 @@
+#include <iostream>
+
+
+ 
+
+using namespace std;
+
+int main()
+
+{
+
+int t;
+
+cin>>t;
+
+while(t--)
+
+{
+
+int count=0,mean;
+
+int a,b,c;
+
+cin>>a>>b>>c;
+
+if(2*b==(a+c))
+
+cout<<count<<endl;
+
+else
+
+{
+
+if((a+c)%2!=0)
+
+{
+
+mean=(a+c)>2*b?(a+c-1)/2:(a+c+1)/2;
+
+count++;
+
+}
+
+else
+
+mean=(a+c)/2;
+
+count+=mean-b>0?mean-b:b-mean;
+
+cout<<count<<endl;
+
+}
+
+}
+
+}

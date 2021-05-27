@@ -1,0 +1,43 @@
+#include <iostream>
+
+ 
+
+int main()
+
+{
+
+    char str[9];
+
+    std::cin >> str;
+
+    int flag = 0;
+
+    if( ( (int)str[0] + (int)str[1] ) % 2 != 0 || ( (int)str[3] + (int)str[4] ) % 2 != 0 || ( (int)str[4] + (int)str[5] ) % 2 != 0 || ( (int)str[7] + (int)str[8] ) % 2 != 0 ) {
+
+        flag = 1;
+
+        goto label;
+
+    }
+
+    switch (str[2])
+
+    {
+
+        case 'A': case 'E': case 'I': case 'O': case 'U': case 'Y':
+
+            flag = 1;
+
+            break;
+
+        default:;
+
+    }
+
+ 
+
+    label: (flag) ? std::cout << "invalid" : std::cout << "valid";
+
+    return 0;
+
+}

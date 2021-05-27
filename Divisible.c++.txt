@@ -1,0 +1,84 @@
+#include<iostream>
+
+using namespace std;
+
+
+ 
+
+int main() {
+
+int N,i,mid,even_sum=0,odd_sum=0;
+
+cin >> N;
+
+int A[N];
+
+for(i=0; i<N; i++)
+
+{
+
+  cin>>A[i];
+
+}
+
+   mid = (N/2)-1;
+
+   for(i=0; i<=mid;i++)
+
+   {
+
+      check:if(A[i]>9)
+
+      {
+
+         A[i] = A[i]/10;
+
+         goto check;
+
+      }
+
+      else
+
+      {
+
+         A[i]=A[i];
+
+      }
+
+   }
+
+   for(i=mid+1;i<N;i++)
+
+   {
+
+      A[i]=A[i]%10;
+
+   }
+
+   for(i=0;i<N;i++)
+
+   {
+
+      if(i%2==0)
+
+       even_sum += A[i];
+
+      else
+
+       odd_sum += A[i];
+
+   }
+
+   int div=odd_sum - even_sum;
+
+   if(div%11==0)
+
+    cout<<"OUI";
+
+   else
+
+    cout<<"NON";
+
+return 0;
+
+}
